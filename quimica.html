@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz cumple Lidia</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    #mensaje {
+      font-size: 5em;
+      color: #fff;
+      text-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 4px solid white;
+      width: 0;
+      animation: escribir 3.5s steps(15, end) forwards;
+    }
+
+    @keyframes escribir {
+      from { width: 0; }
+      to { width: 15ch; }
+    }
+  </style>
+</head>
+<body>
+  <div id="mensaje" id="mensaje">¡Feliz cumple Lidia!</div>
+
+  <script>
+    // Después de que termine la animación de escribir, quitamos la "barra"
+    const mensaje = document.getElementById("mensaje");
+    mensaje.addEventListener("animationend", () => {
+      mensaje.style.borderRight = "none";
+    });
+  </script>
+</body>
+</html>
